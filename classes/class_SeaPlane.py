@@ -9,6 +9,6 @@ class SeaPlane(Entity):
             scale=10,
             color=color.blue,
             shader=lit_with_shadows_shader,
-            position=Vec3(0, 0, 0),
+            position=Vec3(0, 0, 5),
             rotation=Vec3(0, 0, 0)
         )
