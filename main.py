@@ -1,37 +1,18 @@
 from ursina import *
-from ursina.prefabs.grid_editor import GridEditor  
 
-editor = GridEditor(size=(10, 10), palette=(' ', '#'))  
-matrix = editor.grid  # this is a 2D list matrix
-
-from string import ascii_letters
-
-from classes.class_SeaPlane import SeaPlane
-from classes.class_GridOverlay import GridOverlay
-from classes.class_LowerGrid import LowerGrid
-from classes.class_SceneText import SceneText
-
+from classes.create_objects import (
+    my_water_area,
+    my_grid_overlay,
+    my_lower_grid,
+    my_coordinates,
+    enemy_water_area,
+    enemy_grid_overlay,
+    enemy_lower_grid,
+    enemy_coordinates,
+    nav_button
+    )
 
 from icecream import ic
-
-sea_plane = SeaPlane()
-grid_overlay = GridOverlay()
-lower_grid = LowerGrid()
-
-
-ic(matrix)
-
-
-str_lettet_list = [ascii_letters[i] for i in range(10)]
-# ic(str_lettet_list)
-
-
-leters = [SceneText(
-    text=symbol,
-    rotation=(30, 30, 0),
-    position=(-.75, 0, 0),
-    scale=2
-    ) for symbol in str_lettet_list]
 
 
 if __name__ == "__main__":
@@ -39,16 +20,20 @@ if __name__ == "__main__":
     app = Ursina()
 
 
-
-    def update():
-        pass
-
-
     ambient_lights = AmbientLight(color=color.white)
 
+    camera.position = Vec3(0, 15, -22)
+    camera.rotation = Vec3(35, 0, 0)
+
+    def update():
+        if nav_button.change_camera_position:
+            if camera.position > enemy_water_area.position:
+                camera.position -= Vec3(20, 0, 0) * time.dt
+        else:
+            if camera.position < my_water_area.position:
+                camera.position += Vec3(20, 0, 0) * time.dt
+
     # EditorCamera()
-    camera.position = Vec3(0, 15, -20)
-    camera.rotation = Vec3(30, 0, 0)
 
     app.run()
 
