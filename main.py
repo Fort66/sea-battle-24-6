@@ -1,5 +1,7 @@
 from ursina import *
 
+from classes.class_ShipsCreater import ShipsCreater
+
 from classes.create_objects import (
     my_water_area,
     my_grid_overlay,
@@ -14,6 +16,7 @@ from classes.create_objects import (
 
 from icecream import ic
 
+ships_creater = ShipsCreater()
 
 if __name__ == "__main__":
     window.vsync = False

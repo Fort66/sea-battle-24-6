@@ -4,6 +4,8 @@ from .class_SeaPlane import SeaPlane
 from .class_GridOverlay import GridOverlay
 from .class_CoordinateText import CoordinateText
 from .class_NavButton import NavButton
+from .class_ShipsMenu import ShipsMenu
+
 
 
 my_water_area = SeaPlane()
@@ -20,3 +22,7 @@ enemy_lower_grid = GridOverlay(12, 12, color=color.rgba(0, 0, 0, 0), position=Ve
 enemy_coordinates = CoordinateText(enemy_lower_grid)
 
 nav_button = NavButton(position=(-1, .4, 0))
+
+foru_deck_menu = ShipsMenu(
+    model='../assets/models/newport/newport.glb'
+)
