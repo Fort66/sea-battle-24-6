@@ -29,6 +29,8 @@ if __name__ == "__main__":
     camera.rotation = Vec3(35, 0, 0)
 
     def update():
+        ships_creater.update()
+
         if nav_button.change_camera_position:
             if camera.position > enemy_water_area.position:
                 camera.position -= Vec3(20, 0, 0) * time.dt

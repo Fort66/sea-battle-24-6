@@ -23,6 +23,38 @@ enemy_coordinates = CoordinateText(enemy_lower_grid)
 
 nav_button = NavButton(position=(-1, .4, 0))
 
-foru_deck_menu = ShipsMenu(
-    model='../assets/models/newport/newport.glb'
+four_deck_menu = ShipsMenu(
+    model='assets/models/newport/newport.glb',
+    scale=.011,
+    position=Vec3(8, .2, 5),
+    rotation=Vec3(90, 90, 0),
+    ship_counter=1,
+    deck_amount=4
+)
+
+three_deck_menu = ShipsMenu(
+    model='assets/models/newport/newport.glb',
+    scale=.011,
+    position=Vec3(8, .2, 5),
+    rotation=Vec3(90, 90, 0),
+    ship_counter=1,
+    deck_amount=4
+)
+
+two_deck_menu = ShipsMenu(
+    model='assets/models/newport/newport.glb',
+    scale=.011,
+    position=Vec3(8, .2, 5),
+    rotation=Vec3(90, 90, 0),
+    ship_counter=1,
+    deck_amount=4
+)
+
+one_deck_menu = ShipsMenu(
+    model='assets/models/newport/newport.glb',
+    scale=.011,
+    position=Vec3(8, .2, 5),
+    rotation=Vec3(90, 90, 0),
+    ship_counter=1,
+    deck_amount=4
 )
