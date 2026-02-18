@@ -23,38 +23,38 @@ enemy_coordinates = CoordinateText(enemy_lower_grid)
 
 nav_button = NavButton(position=(-1, .4, 0))
 
-four_deck_menu = ShipsMenu(
-    model='assets/models/newport/newport.glb',
-    scale=.011,
-    position=Vec3(8, .2, 5),
-    rotation=Vec3(90, 90, 0),
-    ship_counter=1,
-    deck_amount=4
-)
+# four_deck_menu = ShipsMenu(
+#     model='assets/models/newport/newport.glb',
+#     scale=.015,
+#     position=Vec3(8, .2, 5),
+#     rotation=Vec3(90, 90, 0),
+#     ship_counter=1,
+#     deck_amount=4
+# )
 
-three_deck_menu = ShipsMenu(
-    model='assets/models/newport/newport.glb',
-    scale=.011,
-    position=Vec3(8, .2, 5),
-    rotation=Vec3(90, 90, 0),
-    ship_counter=1,
-    deck_amount=4
-)
+# three_deck_menu = ShipsMenu(
+#     model='assets/models/ton/ton.glb',
+#     scale=.009,
+#     position=Vec3(8, .2, 3),
+#     rotation=Vec3(90, 90, 0),
+#     ship_counter=2,
+#     deck_amount=3
+# )
 
-two_deck_menu = ShipsMenu(
-    model='assets/models/newport/newport.glb',
-    scale=.011,
-    position=Vec3(8, .2, 5),
-    rotation=Vec3(90, 90, 0),
-    ship_counter=1,
-    deck_amount=4
-)
+# two_deck_menu = ShipsMenu(
+#     model='assets/models/lowa/lowa.glb',
+#     scale=.006,
+#     position=Vec3(8, .2, 1),
+#     rotation=Vec3(90, 0, 0),
+#     ship_counter=3,
+#     deck_amount=2
+# )
 
 one_deck_menu = ShipsMenu(
-    model='assets/models/newport/newport.glb',
-    scale=.011,
-    position=Vec3(8, .2, 5),
+    model='assets/models/meteor/meteor.glb',
+    scale=.007,
+    position=Vec3(8, .2, -1),
     rotation=Vec3(90, 90, 0),
-    ship_counter=1,
-    deck_amount=4
+    ship_counter=4,
+    deck_amount=1
 )
