@@ -9,7 +9,7 @@ class CoordinateText:
         self.letters_list = [ascii_letters[i] for i in range(10)]
         self.digits_list = [str(i) for i in range(1, 11)]
 
-        self.set_coorsinates()
+        self.set_coordinates()
 
     def draw_coordinates(self, iteration_object, idx, cell):
         Entity(
@@ -21,7 +21,7 @@ class CoordinateText:
             rotation=Vec3(90, 0, 0),
         ).position = self.grid.map_position_cells[cell]
 
-    def set_coorsinates(self):
+    def set_coordinates(self):
         for i in range(1, 11):
             self.draw_coordinates(self.letters_list, (i - 1), (i, 11))
             self.draw_coordinates(self.letters_list, (i - 1), (i, 0))

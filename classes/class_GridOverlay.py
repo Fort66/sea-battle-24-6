@@ -1,5 +1,7 @@
 from ursina import Entity, color, Vec3, Grid
 
+import json
+
 from icecream import ic
 
 class GridOverlay(Entity):
@@ -42,5 +44,6 @@ class GridOverlay(Entity):
                 cell_x = start_position + (col * (self.grid_scale / self.grid_width)) + offset - .2
                 cell_z = start_position + (row * (self.grid_scale / self.grid_height)) + offset + .2
 
-                self.map_position_cells[(col, row)] = Vec3(cell_x, 0, cell_z) + self.position
-        ic(self.map_position_cells)
+                self.map_position_cells[(col, row)] = {Vec3(cell_x, 0, cell_z) + self.position, self.world_transform @ (Vec3(cell_x, 0, cell_z) + self.position)}
+
+
