@@ -3,6 +3,11 @@ from ursina import Entity, Vec3, mouse
 from icecream import ic
 
 class Ship(Entity):
+    """
+Кравцов Никита:
+добавил привязку корабля к ближайшей клетке сетки,
+чтобы при перетаскивании он "прилипал" к центру клетки (изменил метод update и добавил метод get_clossest_cell)
+"""
     def __init__(
         self,
         water=None,
@@ -52,5 +57,26 @@ class Ship(Entity):
                     self.rotation += Vec3(0, 90, 0)
 
     def update(self):
-        if self.following_mouse:
-            self.position = Vec3(mouse.world_point[0], 0, mouse.world_point[2])
+        if self.following_mouse and mouse.world_point:
+            mouse_pos = Vec3(mouse.world_point[0], 0, mouse.world_point[2])
+
+            snapped_position = self.get_closest_cell(mouse_pos)
+            if snapped_position is not None:
+                self.position = snapped_position
+
+    def get_closest_cell(self, world_pos):
+        if not self.water:
+            return None
+
+        closest_pos = None
+        min_dist = float('inf')
+
+        for (col, row), cell_data in self.water.map_position_cells.items():
+            cell_pos = cell_data[0]  # Vec3 центра клетки
+            dist = (world_pos - cell_pos).length()
+
+            if dist < min_dist:
+                min_dist = dist
+                closest_pos = cell_pos
+
+        return closest_pos

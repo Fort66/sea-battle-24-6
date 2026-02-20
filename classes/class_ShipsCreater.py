@@ -8,6 +8,11 @@ from .class_Ship import Ship
 
 
 class ShipsCreater:
+    """
+Кравцов Никита:
+изменил создание корабля — теперь передаю ссылку на игровую сетку (water),
+чтобы корабль мог привязываться к клеткам.
+"""
     __instance = None
 
     def __new__(cls, *args, **kwargs):
@@ -22,6 +27,7 @@ class ShipsCreater:
         self.texture = None
         self.scale = None
         self.ships = []
+        self.water = None
 
     def update(self):
         if self.create_ship_command:
@@ -33,6 +39,7 @@ class ShipsCreater:
                     position=Vec3(0, 0, 0),
                     rotation=Vec3(90, 90, 0),
                     deck_amount=self.count_deck,
+                    water=self.water,
                 )
             )
             self.create_ship_command = False

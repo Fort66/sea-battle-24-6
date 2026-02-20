@@ -5,6 +5,11 @@ from .class_ShipsCreater import ShipsCreater
 ships_creater = ShipsCreater()
 
 class ShipsMenu(Entity):
+    """
+Кравцов Никита:
+добавил передачу сетки в ShipsCreater,
+чтобы новые корабли создавались с доступом к полю.
+"""
     def __init__(
         self,
         water=None,
@@ -47,6 +52,7 @@ class ShipsMenu(Entity):
                 ships_creater.count_deck = self.deck_amount
                 ships_creater.scale = self.scale
                 ships_creater.create_ship_command = True
+                ships_creater.water = self.water
 
         if self.ship_counter <= 0:
             self.visible = False
