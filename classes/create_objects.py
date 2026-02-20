@@ -16,22 +16,13 @@ my_water_area = SeaPlane()
 my_grid_overlay = GridOverlay(10, 10, position=Vec3(0, .002, 0))
 my_lower_grid = GridOverlay(12, 12, color=color.rgba(0, 0, 0, 0), position=Vec3(0, -.002, 0))
 
-# my_coordinates = CoordinateText(my_lower_grid)
-
-# with open(f'my_water_area_coordinates.txt', 'a') as f:
-#     for key, value in my_grid_overlay.map_position_cells.items():
-#         f.write(f'{key, value}\n')
+my_coordinates = CoordinateText(my_lower_grid)
 
 enemy_water_area = SeaPlane(position=Vec3(-18, 0, 0))
 enemy_grid_overlay = GridOverlay(10, 10, position=Vec3(-18, .002, 0))
 enemy_lower_grid = GridOverlay(12, 12, color=color.rgba(0, 0, 0, 0), position=Vec3(-18, -.002, 0))
 
-# enemy_coordinates = CoordinateText(enemy_lower_grid)
-
-
-# with open(f'enemy_water_area_coordinates.txt', 'a') as f:
-#     for key, value in enemy_grid_overlay.map_position_cells.items():
-#         f.write(f'{key, value}\n')
+enemy_coordinates = CoordinateText(enemy_lower_grid)
 
 nav_button = NavButton(position=(-1, .4, 0))
 
